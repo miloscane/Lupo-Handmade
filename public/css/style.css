@@ -267,6 +267,8 @@ progress{
     height:100vh;
     text-shadow:2px 2px 2px rgba(58,39,32, 0.8);
     padding-top:20px;
+    padding-left:10px;
+    padding-right:10px;
 }
 
 .whiteBackground{
@@ -341,7 +343,7 @@ progress{
     width:33.33vw;
     height:33.33vw;
     border:2px solid rgb(240,226,208);
-    margin-right:-6px;
+    margin-left:-2px;
     margin-top:-2px;
     display:inline-block;
     vertical-align:top;
@@ -408,6 +410,13 @@ progress{
     border:2px solid rgb(58,39,32);
 }
 
+.contactInfoWrap{padding-bottom:50px;}
+
+.contactInfo{
+    font-weight:500;
+    font-size:20px;
+}
+
 
 
 
@@ -467,7 +476,7 @@ progress{
     }
 
     #kontakt{
-        font-size:70px;
+        font-size:60px;
     }
 }
 
