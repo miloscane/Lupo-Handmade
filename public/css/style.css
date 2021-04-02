@@ -410,11 +410,19 @@ progress{
     border:2px solid rgb(58,39,32);
 }
 
-.contactInfoWrap{padding-bottom:50px;}
+.contactInfoWrap{
+    padding-bottom:50px;
+}
 
 .contactInfo{
     font-weight:500;
     font-size:20px;
+}
+
+.contactInfoWrap a{
+    display:inline-block;
+    vertical-align: middle;
+    margin:5px;
 }
 
 
