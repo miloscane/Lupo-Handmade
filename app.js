@@ -70,8 +70,17 @@ function fetchPageInfo(pageName){
 
 
 server.get('/',function(req,res){
+	var imageNames	=	fs.readdirSync('./public/images/shoes/drive');
+	var imageExtensions	=	['jpg','jpeg','png'];
+	for(var i=0;i<imageNames.length;i++){
+		var extension 	=	imageNames[i].split(".")[eval(imageNames[i].split(".").length-1)];
+		if(imageExtensions.indexOf(extension)<0){
+			imageNames.splice(i,1);
+		}
+	}
 	res.render('home',{
-		pageInfo: fetchPageInfo('home')
+		pageInfo: fetchPageInfo('home'),
+		shoes: imageNames 
 	});
 });
 

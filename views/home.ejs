@@ -1,26 +1,65 @@
 <%- include ("partials/header") -%>
-	
-	<div class="pageTitle">HANDMADE SHOES SINCE 2000</div>
-	<div class="whiteBackground" style="border-top:2px solid rgb(58,39,32)">
-		<div class="homeTrianlge"><img src="/images/triangle.png"></div>
+	<div class="sliderView">
+	</div>
+	<script>
+		var shoes	=	<%- JSON.stringify(shoes)%>;
+		var randomArray	=	Array.from({length: 10}, () => Math.floor(Math.random() * eval(shoes.length-1)));
+		for(var i=0;i<randomArray.length;i++){
+			var slide	=	document.createElement("DIV");
+			slide.setAttribute("class","slide");
+			slide.setAttribute("data-active",0);
+			slide.setAttribute("style","background-image:url(/images/shoes/drive/"+shoes[randomArray[i]]+");opacity:0;");
+			document.getElementsByClassName("sliderView")[0].appendChild(slide);
+		}
+		var slides	=	document.getElementsByClassName("sliderView")[0].getElementsByClassName("slide");
+		slides[0].dataset.active=1;
+		slides[0].style.opacity=1;
+		for(var i=0;i<slides.length;i++){
+			slides[i].classList.add("easy");
+		}
+
+		setInterval(function(){
+			for(var i=0;i<slides.length;i++){
+				if(slides[i].dataset.active==1){
+					slides[i].dataset.active=0;
+					slides[i].style.opacity=0;
+					var nextSlide	=	(i+1==slides.length) ? 0:i+1;
+					slides[nextSlide].dataset.active=1;
+					slides[nextSlide].style.opacity=1;
+					break;
+				}
+			}
+		},5000)
+	</script>
+	<div class="whiteBackground" style="border-top:3px solid rgb(62,63,68)">
+		<div class="homeTrianlge"><img src="/images/triangle2.png"></div>
 		<div class="shortContent">
-			<div class="brownTitle">LUPO</div>
-			<div class="text">
+			<img src="/images/Lupo-New-Logo.png">
+			<div class="text lupoHistoryText">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</div>
+			<div class="historicalImage">
+				<img src="/images/historical.jpg">
+				<div class="date">
+					<img src="/images/date.png">
+				</div>
 			</div>
 		</div>
 		<div class="galleryTitle">Gallery</div>
-		<div class="galleryItemsWrap">
-			<div class="galleryItem" style="background-image:url(/images/shoes/1.jpg)"></div><!--
-			--><div class="galleryItem" style="background-image:url(/images/shoes/2.jpg)"></div><!--
-			--><div class="galleryItem" style="background-image:url(/images/shoes/3.jpg)"></div><!--
-			--><div class="galleryItem" style="background-image:url(/images/shoes/4.jpg)"></div><!--
-			--><div class="galleryItem" style="background-image:url(/images/shoes/5.jpg)"></div><!--
-			--><div class="galleryItem" style="background-image:url(/images/shoes/6.jpg)"></div><!--
-			--><div class="galleryItem" style="background-image:url(/images/shoes/7.jpg)"></div><!--
-			--><div class="galleryItem" style="background-image:url(/images/shoes/8.jpg)"></div><!--
-			--><div class="galleryItem" style="background-image:url(/images/shoes/9.jpg)"></div>
-		</div>
+		<div class="galleryItemsWrap"></div>
+		<script>
+			for(var i=0;i<shoes.length;i++){
+				var	galleryItem	=	document.createElement("DIV");
+				galleryItem.setAttribute("class","galleryItem");
+
+					var thumbnail	=	document.createElement("DIV");
+					thumbnail.setAttribute("class","thumbnail");
+					thumbnail.setAttribute("style","background-image:url(/images/shoes/drive/"+shoes[i]+")");
+					galleryItem.appendChild(thumbnail);
+
+				document.getElementsByClassName("galleryItemsWrap")[0].appendChild(galleryItem);
+			}
+		</script>
 	</div>
 	<div class="testimonialsWrap">
 		<div class="pageTitle whatSaid">
