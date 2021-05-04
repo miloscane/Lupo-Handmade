@@ -118,6 +118,7 @@
 					elem.classList.add("galleryItemEnlarged");
 					elem.style.backgroundImage	=	"url(/images/shoes/drive/"+elem.dataset.imagename+")";
 				}
+				setTimeout(function(){elem.scrollIntoView({behavior: 'smooth', inline: 'start'})},400)
 			}
 		</script>
 	</div>
@@ -167,10 +168,6 @@
 				<img src="/images/Instagram.png">
 			</a>
 		</div>
-		<div id='map'></div>
-		<script src="/js/map.js"></script>
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsUyoMs0Ba_6bPbtD5A5_1yOJXjjMYsMQ&amp;callback=initMap" async="" defer=""></script>
-		
 	</div>
 	<div>
 		<img src="/images/Lupo-Workshop.jpeg">
