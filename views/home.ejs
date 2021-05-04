@@ -45,12 +45,63 @@
 				</div>
 			</div>
 		</div>
+		<div class="hashtags">
+			<div class="hashtag">#handmade</div><div class="hashtag">#original</div><div class="hashtag">#oldfashioned</div>
+			<div class="hashtag">#trendy</div><div class="hashtag">#leather</div><div class="hashtag">#wood</div>
+			<div class="hashtag">#colorfull</div><div class="hashtag">#unique</div><div class="hashtag">#class</div>
+		</div>
+		<div class="grayTitle">Models</div>
+		<div class="modelsWrap">
+			<div class="modelWrap">
+				<div class="modelImage" style="background-image: url(/Francesco.jpeg);"></div>
+				<div class="genderIcon"><img src="/male.png"></div>
+				<div class="nameWrap">
+					<div class="fade"></div>
+					<div class="name">Francesco</div>
+				</div>
+			</div>
+			<div class="modelWrap">
+				<div class="modelImage" style="background-image: url(/Capri.jpeg);"></div>
+				<div class="genderIcon"><img src="/male.png"></div>
+				<div class="nameWrap">
+					<div class="fade"></div>
+					<div class="name">Capri</div>
+				</div>
+			</div>
+			<div class="modelWrap">
+				<div class="modelImage" style="background-image: url(/Bruno.jpeg);"></div>
+				<div class="genderIcon"><img src="/male.png"></div>
+				<div class="nameWrap">
+					<div class="fade"></div>
+					<div class="name">Bruno</div>
+				</div>
+			</div>
+			<div class="modelWrap">
+				<div class="modelImage" style="background-image: url(/Massimo.jpeg);"></div>
+				<div class="genderIcon"><img src="/male.png"></div>
+				<div class="nameWrap">
+					<div class="fade"></div>
+					<div class="name">Massimo</div>
+				</div>
+			</div>
+			<div class="modelWrap">
+				<div class="modelImage" style="background-image: url(/Anna.jpeg);"></div>
+				<div class="genderIcon"><img src="/female.png"></div>
+				<div class="nameWrap">
+					<div class="fade"></div>
+					<div class="name">Anna</div>
+				</div>
+			</div>
+		</div>
+
 		<div class="galleryTitle">Gallery</div>
 		<div class="galleryItemsWrap"></div>
 		<script>
 			for(var i=0;i<shoes.length;i++){
 				var	galleryItem	=	document.createElement("DIV");
 				galleryItem.setAttribute("class","galleryItem");
+				galleryItem.setAttribute("data-imagename",shoes[i]);
+				galleryItem.setAttribute("onclick","enlargeGalleryItem(this)");
 
 					var thumbnail	=	document.createElement("DIV");
 					thumbnail.setAttribute("class","thumbnail");
@@ -58,6 +109,15 @@
 					galleryItem.appendChild(thumbnail);
 
 				document.getElementsByClassName("galleryItemsWrap")[0].appendChild(galleryItem);
+			}
+
+			function enlargeGalleryItem(elem){
+				if(elem.classList.contains("galleryItemEnlarged")){
+					elem.classList.remove("galleryItemEnlarged");
+				}else{
+					elem.classList.add("galleryItemEnlarged");
+					elem.style.backgroundImage	=	"url(/images/shoes/drive/"+elem.dataset.imagename+")";
+				}
 			}
 		</script>
 	</div>
