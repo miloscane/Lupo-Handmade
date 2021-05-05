@@ -1,5 +1,8 @@
 <%- include ("partials/header") -%>
-	<div class="sliderView">
+	<script>
+		var shoes	=	<%- JSON.stringify(shoes)%>;
+	</script>
+	<!--<div class="sliderView">
 	</div>
 	<script>
 		var shoes	=	<%- JSON.stringify(shoes)%>;
@@ -30,7 +33,13 @@
 				}
 			}
 		},5000)
-	</script>
+	</script>-->
+	<div class="videoWrap">
+		<video autoplay muted loop poster="/Lupo-Handmade-Video-Poster.jpeg">
+		  <source src="Lupo-Handmade-Video.mp4" type="video/mp4">
+		  Your browser does not support the videos :(.
+		</video>
+	</div>
 	<div class="whiteBackground" style="border-top:3px solid rgb(62,63,68)">
 		<div class="homeTrianlge"><img src="/images/triangle2.png"></div>
 		<div class="shortContent">
@@ -61,7 +70,7 @@
 				</div>
 			</div>
 			<div class="modelWrap">
-				<div class="modelImage" style="background-image: url(/Capri.jpeg);"></div>
+				<div class="modelImage" style="background-image: url(/Capri.JPG);"></div>
 				<div class="genderIcon"><img src="/male.png"></div>
 				<div class="nameWrap">
 					<div class="fade"></div>
@@ -93,8 +102,44 @@
 				</div>
 			</div>
 		</div>
+		<div class="grayTitle">How we do it</div>
+		<div class="grayBackground stepsWrap">
+			<div class="stepWrap">
+				<div class="textWrap">
+					<div class="title">Measuring</div>
+					<div class="text">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</div>
+				</div>
+				<div class="numberWrap">
+					<div class="number">1.</div>
+				</div>
+			</div>
+			<div class="stepWrap">
+				<div class="numberWrap">
+					<div class="number">2.</div>
+				</div>
+				<div class="textWrap">
+					<div class="title">Making</div>
+					<div class="text">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</div>
+				</div>
+			</div>
+			<div class="stepWrap">
+				<div class="textWrap">
+					<div class="title">Delivery</div>
+					<div class="text">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</div>
+				</div>
+				<div class="numberWrap">
+					<div class="number">3.</div>
+				</div>
+			</div>
+		</div>
 
-		<div class="galleryTitle">Gallery</div>
+		<div class="grayTitle">Gallery</div>
 		<div class="galleryItemsWrap"></div>
 		<script>
 			for(var i=0;i<shoes.length;i++){

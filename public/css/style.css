@@ -341,8 +341,8 @@ progress{
     text-align:center;
     height:70vh;
     font-size:0;
-    border-top:1px solid rgb(240,226,208);
-    border-bottom:1px solid rgb(240,226,208);
+    border-top:2px solid rgb(62,63,68);
+    border-bottom:2px solid rgb(62,63,68);
     overflow-y:scroll;
 }
 
@@ -674,12 +674,72 @@ progress{
     color:rgba(62,63,68,1);
 }
 
+.videoWrap{
+    background-color:rgb(240,226,208);
+    background-image:url(/images/background.jpg);
+    background-repeat:repeat;
+    max-height:100vh;
+    overflow:hidden;
+}
 
+.videoWrap video{
+    width:100%;
+    max-width:1080px;
+    max-height:100vh;
+    margin:0 auto;
+    display:block;
+}
 
+.stepsWrap{
+    padding:10px;
+    background-color:rgb(62,63,68);
+    color:rgb(240,226,208);
+}
 
+.stepsWrap .stepWrap{
+    font-size:0px;
+}
 
+.stepsWrap .stepWrap .textWrap, .stepsWrap .stepWrap .numberWrap{
+    display:inline-block;
+    vertical-align: middle;
+}
 
+.stepsWrap .stepWrap .textWrap{
+    width:60%;
+}
 
+.stepsWrap .stepWrap .textWrap .title{
+    font-weight:500;
+    font-size:20px;
+    text-align:left;
+}
+
+.stepsWrap .stepWrap .textWrap .text{
+    font-weight:200;
+    font-size:16px;
+    color:rgb(240,226,208);
+    text-align:left;
+}
+
+.stepsWrap .stepWrap .numberWrap{
+    width:40%;
+    padding:5%;
+}
+
+.stepsWrap .stepWrap .numberWrap .number{
+    border-radius:100%;
+    background-color:rgb(240,226,208);
+    background-image:url(/images/background.jpg);
+    background-repeat:repeat;
+    color:rgb(62,63,68);
+    font-weight:400;
+    font-size:60px;
+}
+
+.stepsWrap .stepWrap:nth-child(even) .textWrap .text, .stepsWrap .stepWrap:nth-child(even) .textWrap .title{
+    text-align:right;
+}
 
 
 
@@ -699,6 +759,10 @@ progress{
     .testimonialImage{
         width:23vw;
         height:23vw;
+    }
+
+    .videoWrap video{
+        max-height:none;
     }
 }
 
