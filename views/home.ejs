@@ -163,7 +163,7 @@
 					elem.classList.add("galleryItemEnlarged");
 					elem.style.backgroundImage	=	"url(/images/shoes/drive/"+elem.dataset.imagename+")";
 				}
-				setTimeout(function(){elem.scrollIntoView({behavior: 'smooth', inline: 'start'})},400)
+				setTimeout(function(){elem.scrollIntoView({behavior: 'smooth', block: 'start'})},400)
 			}
 		</script>
 	</div>
@@ -206,12 +206,47 @@
 			<div class="contactInfo">Nemanja Stojanovic</div>
 			<div class="contactInfo">+381 65 1234-567</div>
 			<div class="contactInfo">info@lupo.rs</div>
-			<a href="https://www.facebook.com/lupohandmadeshoes/">
-				<img src="/images/Facebook.png">
-			</a>
-			<a href="https://www.instagram.com/lupohandmade_shoes/?hl=en">
-				<img src="/images/Instagram.png">
-			</a>
+			<div class="formWrapper">
+				<form method="POST" action="/send-message" id="form">
+					<textarea placeholder="Leave a message..." id="message"></textarea>
+					<div class="inputsWrap">
+						<div class="note">Please leave your</div>
+						<div class="inputWrap">
+							<input type="email" name="email" id="email" placeholder="Email">
+						</div>
+						<div class="note">or</div>
+						<div class="inputWrap">
+							<input type="text" name="tel" id="tel" placeholder="Phone">
+						</div>
+					</div>
+					<div id="error"></div>
+					<div class="sendButton" onclick="shouldSubmit()">Send</div>
+					<script>
+						function shouldSubmit(){
+							if(document.getElementById("email").value!="" || document.getElementById("tel").value!=""){
+								document.getElementById("form").submit();
+							}else{
+								document.getElementById("error").innerHTML	=	"Please provide your e-mail address or phone number so we can get in touch."
+							}
+						}
+					</script>
+				</form>
+			</div>
+		</div>
+		<div class="grayTitle">Follow Us</div>
+		<div class="followsWrap">
+			<div class="followWrap">
+				<a href="https://www.facebook.com/lupohandmadeshoes/">
+					<img class="logo" src="/logos/facebook.png">
+					<div class="atSymbol">lupohandmadeshoes</div>
+				</a>
+			</div>
+			<div class="followWrap">
+				<a href="https://www.instagram.com/lupohandmade_shoes/?hl=en">
+					<img class="logo" src="/logos/instagram.png">
+					<div class="atSymbol">@lupohandmade_shoes</div>
+				</a>
+			</div>
 		</div>
 	</div>
 	<div>
