@@ -1,5 +1,18 @@
  	</body>
  	<footer>
- 		
+ 		<div id="lightbox">
+			<div id="lightbox-text"></div>
+			<div class="lighboxtButton" onclick="this.parentElement.parentElement.style.display='none'">Ok</div>
+ 		</div>
  	</footer>
+ 	<script>
+ 		if(window.location.href.split("message=")[1]){
+ 			if(window.location.href.split("message=")[1]=="success"){
+ 				document.getElementById("lightbox-text").innerHTML = "We have received your message. We will contact you as soon as possible on your e-mail or via the phone.<br>&nbsp;<br>Kind regards,<br>Lupo Handmade";
+ 			}else if(window.location.href.split("message=")[1]=="fail"){
+ 				document.getElementById("lightbox-text").innerHTML = "Something went wrong while sending your message. Please try again or contact us directly on info@lupo.rs or call us on +381 65 123 4567<br>&nbsp;<br>Kind regards,<br>Lupo Handmade";
+ 			}
+ 			document.getElementById("lightbox").style.display="block";
+ 		}
+ 	</script>
 </html>

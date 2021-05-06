@@ -9,6 +9,7 @@ var bodyParser			=	require('body-parser');
 var session				=	require('express-session');
 var cookieParser		=	require('cookie-parser');
 var crypto				=	require('crypto');
+var nodemailer 			= 	require('nodemailer');
 
 server.set('view engine','ejs');
 var viewArray	=	[__dirname+'/views'];
@@ -36,6 +37,17 @@ pageInfo.fileVersion	=	mainFileVersion;
 pageInfo.siteName		=	"Lupo - Handmade shoes";
 
 require('events').EventEmitter.prototype._maxListeners = 0;
+
+
+var transporter = nodemailer.createTransport({
+	host: 'mail.milos90.mycpanel.rs',
+	port: 465,
+	secure: true,
+	auth: {
+		user: 'admin@solver.rs',
+		pass: 'miloscane1'
+	}
+});
 
 //Minify resourcessss
 /*var htmlModulesList	=	fs.readdirSync('./public/html-modules');
@@ -81,6 +93,24 @@ server.get('/',function(req,res){
 	res.render('home',{
 		pageInfo: fetchPageInfo('home'),
 		shoes: imageNames 
+	});
+});
+
+server.post('/send-message',function(req,res){
+	var mailOptions = {
+		from: '"Lupo Handmade Website" <admin@solver.rs>',
+		to: 'lepsin66699@gmail.com,miloscane@gmail.com',
+		subject: 'Lupo Handmade Website Contact',
+		html: req.body.message+"<br>&nbsp;<br><b>Phone: </b>"+req.body.tel+"<br><b>Email: </b>"+req.body.email+"<br>&nbsp;<br>Kind regards,<br><a href='http://site.solver.rs' style='color:rgba(19,170,82)'>solver.rs</a>"
+	};
+	transporter.sendMail(mailOptions, (error, info) => {
+		if (error) {
+			res.redirect('/?message=fail')
+			return console.log(error);
+		}
+		console.log('Message sent: %s', info.messageId);
+		console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+		res.redirect('/?message=success')
 	});
 });
 
