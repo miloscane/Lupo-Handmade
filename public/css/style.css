@@ -896,6 +896,7 @@ progress{
     font-weight:400;
     font-size:18px;
     z-index:1000;
+    display:none;
 }
 
 #lightbox .lighboxtButton{

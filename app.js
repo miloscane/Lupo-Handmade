@@ -101,7 +101,7 @@ server.post('/send-message',function(req,res){
 		from: '"Lupo Handmade Website" <admin@solver.rs>',
 		to: 'lepsin66699@gmail.com,miloscane@gmail.com',
 		subject: 'Lupo Handmade Website Contact',
-		html: req.body.message+"<br>&nbsp;<br><b>Phone: </b>"+req.body.tel+"<br><b>Email: </b>"+req.body.email+"<br>&nbsp;<br>Kind regards,<br><a href='http://site.solver.rs' style='color:rgba(19,170,82)'>solver.rs</a>"
+		html: req.body.message2+"<br>&nbsp;<br><b>Phone: </b>"+req.body.tel+"<br><b>Email: </b>"+req.body.email+"<br>&nbsp;<br>Kind regards,<br><a href='http://site.solver.rs' style='color:rgba(19,170,82)'>solver.rs</a>"
 	};
 	transporter.sendMail(mailOptions, (error, info) => {
 		if (error) {
