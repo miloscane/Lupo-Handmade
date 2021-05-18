@@ -11,7 +11,7 @@ var cookieParser		=	require('cookie-parser');
 var crypto				=	require('crypto');
 var nodemailer 			= 	require('nodemailer');
 
-server.set('view engine','ejs');
+server.set('view engine','ejs'); 
 var viewArray	=	[__dirname+'/views'];
 var viewFolder	=	fs.readdirSync('views');
 for(var i=0;i<viewFolder.length;i++){
