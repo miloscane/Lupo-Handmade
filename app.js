@@ -10,6 +10,8 @@ var session				=	require('express-session');
 var cookieParser		=	require('cookie-parser');
 var crypto				=	require('crypto');
 var nodemailer 			= 	require('nodemailer');
+const dotenv = require('dotenv');
+dotenv.config();
 
 server.set('view engine','ejs'); 
 var viewArray	=	[__dirname+'/views'];
@@ -25,7 +27,9 @@ server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(cookieParser());
 
-http.listen(process.env.PORT || 3000, function(){
+console.log(process.env.PORT)
+
+http.listen(process.env.PORT, function(){
   console.log('Server Started');
 });
 
@@ -40,12 +44,12 @@ require('events').EventEmitter.prototype._maxListeners = 0;
 
 
 var transporter = nodemailer.createTransport({
-	host: 'mail.milos90.mycpanel.rs',
+	host: process.env.transporterhost,
 	port: 465,
 	secure: true,
 	auth: {
-		user: 'admin@solver.rs',
-		pass: 'miloscane1'
+		user: process.env.transporteruser,
+		pass: process.env.transporterpass
 	}
 });
 
