@@ -1,5 +1,1 @@
-/node_modules
-/public/images
-/public/videos
-/public/icons
-/public/logos
+.env
